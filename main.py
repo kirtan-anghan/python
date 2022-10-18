@@ -5,7 +5,7 @@ def radians(degree: float) -> float:
     """
     Coverts the given angle from degrees to radians
     https://en.wikipedia.org/wiki/Radian
-    >>> radians(180)
+    >>> radians(180) 180
     3.141592653589793
     >>> radians(92)
     1.6057029118347832
@@ -24,4 +24,4 @@ def radians(degree: float) -> float:
 if __name__ == "__main__":
     from doctest import testmod
 
-    testmod()
+testmod()
