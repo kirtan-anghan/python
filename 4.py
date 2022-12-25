@@ -1,12 +1,14 @@
-import time
-ctime=time.strftime("%H:%M:%S")
-htime=time.strftime('%H')
-mtime=time.strftime('%M')
-stime=time.strftime('%S')
+#add two number by function
+def add(x, y):
+    return x + y
 
-if(htime >= "0" and htime<="12"):
-   print("good morning sir!!")
-elif(htime >'12' and htime <'18'):
-    print("good afternoon sir!!")
-else:
-    print("good night sir!!")
+print( add(5,2))
+
+#recursion function for power of numbers 
+
+def power(x, n):
+    if n == 0:
+        return 1
+    else:
+        return x * power(x,n-1)
+print( power(5,2))
