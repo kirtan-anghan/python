@@ -1,15 +1,7 @@
 from pytube import YouTube
+from pytube.cli import on_progress
 link = str(input("enter link to video"))
 yt = YouTube(link)
+yt=YouTube(link,on_progress_callback=on_progress)
 stream = yt.streams.get_highest_resolution()
 stream.download()
-
-# print("Title: ",yt.title)
-# #Number of views of video
-# print("Number of views: ",yt.views)
-# #Length of the video
-# print("Length of video: ",yt.length,"seconds")
-# #Description of video
-# print("Description: ",yt.description)
-# #Rating
-# print("Ratings: ",yt.rating)
