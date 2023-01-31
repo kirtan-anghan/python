@@ -3,7 +3,7 @@ import pyautogui
 import time
 
 time.sleep(5)
-for i in range(100):
+for i in range(10):
     pyautogui.press("h")
     pyautogui.press("e")
     pyautogui.press("l")
