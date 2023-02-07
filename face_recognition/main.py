@@ -31,8 +31,16 @@ class FaceRecognition:
 
     def encode_faces(self):
         for image in os.listdir('faces'):
+
+            if image.endswith(".DS_Store"):
+               continue
             face_image = face_recognition.load_image_file(f"faces/{image}")
             face_encoding = face_recognition.face_encodings(face_image)[0]
+
+            if len(face_encoding) > 0:
+                face_encodings = face_encoding[0]
+            else:
+                print("No face found in the image")
 
             self.known_face_encodings.append(face_encoding)
             self.known_face_names.append(image)
