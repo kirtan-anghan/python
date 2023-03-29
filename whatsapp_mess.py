@@ -1,3 +1,3 @@
 import pywhatkit
-pywhatkit.sendwhatmsg("+919016999168","hello",17,6)
+pywhatkit.sendwhatmsg("+919624458906","hello",19,9)
 # time 17,6 
