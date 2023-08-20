@@ -14,7 +14,8 @@ def face_confidence(face_distance, face_match_threshold=0.6):
     if face_distance > face_match_threshold:
         return str(round(linear_val * 100, 2)) + '%'
     else:
-        value = (linear_val + ((1.0 - linear_val) * math.pow((linear_val - 0.5) * 2, 0.2))) * 100
+        value = (linear_val + ((1.0 - linear_val) *
+                 math.pow((linear_val - 0.5) * 2, 0.2))) * 100
         return str(round(value, 2)) + '%'
 
 
@@ -30,11 +31,11 @@ class FaceRecognition:
         self.encode_faces()
 
     def encode_faces(self):
-        for image in os.listdir('faces'):
+        for image in os.listdir("/Users/kirtan/Desktop/code/python/face_recognition/faces"):
 
             if image.endswith(".DS_Store"):
-               continue
-            face_image = face_recognition.load_image_file(f"faces/{image}")
+                continue
+            face_image = face_recognition.load_image_file(f"/Users/kirtan/Desktop/code/python/face_recognition/faces/{image}")
             face_encoding = face_recognition.face_encodings(face_image)[0]
 
             if len(face_encoding) > 0:
@@ -95,9 +96,9 @@ class FaceRecognition:
                 left *= 4
 
                 # Create the frame with the name
-                cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-                cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
-                cv2.putText(frame, name, (left + 6, bottom - 6), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
+                cv2.rectangle(frame, (left, top),(right, bottom), (0, 0, 255), 2)
+                cv2.rectangle(frame, (left, bottom - 35),(right, bottom), (0, 0, 255), cv2.FILLED)
+                cv2.putText(frame, name, (left + 6, bottom - 6),cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 255, 255), 1)
 
             # Display the resulting image
             cv2.imshow('Face Recognition', frame)
